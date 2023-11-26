@@ -19,24 +19,35 @@ import { Swiper, SwiperSlide } from "swiper/react"
 
 const Work = () => {
 
+    //////////////////////////////////// VARIABLES ///////////////////////////////////////////////
     const imageContainerRef = useRef(null)
+    const sectionRef = useRef()
 
-
+    //////////////////////////////////// STATE ///////////////////////////////////////////////
     const [showImageDetail, setShowImageDetail] = useState(null)
     const [showImageModal, setShowImageModal] = useState(false)
-
     const [fullScreen, setFullScreen] = useState(false)
-
     const [currentImage, setCurrentImage] = useState({})
     const [currentSlideIndex, setCurrentSlideIndex] = useState(null)
 
+    //////////////////////////////////////// USE EFFECT //////////////////////////////////////////////
+    useEffect(() => {
+        const updateHeight = () => {
+            const heightInVh = (sectionRef.current.offsetHeight / window.innerHeight) * 100;
+            sectionRef.current.style.top = `-${heightInVh - 100}vh`;
+        };
+        updateHeight();
+        window.addEventListener('scroll', updateHeight);
 
-
+        return () => {
+            window.removeEventListener('scroll', updateHeight);
+        };
+    }, []);
     useEffect(() => {
         imageContainerRef.current?.swiper?.slideTo(currentImage.index)
     }, [currentImage])
 
-
+    //////////////////////////////////// FUNCTIONS ///////////////////////////////////////////////
     const imageClick = (image) => {
         setShowImageModal(true);
         setCurrentImage(image);
@@ -69,9 +80,9 @@ const Work = () => {
 
 
     return (
-        <section name="work" className="   
-            flex flex-col justify-between gap-[0rem] relative z-10 w-full items-center bg-white  
-            px-[14px] py-[7rem]
+        <section ref={sectionRef} name="work" className="   
+            flex flex-col justify-between gap-[0rem] z-10 w-full items-center bg-white  
+            px-[14px] py-[7rem] sticky top-0
             sm:px-[3rem] sm:py-[7rem]
             md:px-[64px] md:py-[10rem]
             ">
@@ -121,7 +132,7 @@ const Work = () => {
                                         whileInView={{ y: [0, 1], opacity: [0, 1] }}
                                         whileHover={{ scale: [1, 1] }}
                                         transition={{ duration: 1 }}
-                                        src={image.image}
+                                        src={image2}
                                         alt="image6"
                                         className="bg-gray w-full h-full "
                                     />
@@ -175,8 +186,8 @@ const Work = () => {
                                     whileInView={{ y: [0, 1], opacity: [0, 1] }}
                                     whileHover={{ scale: [1, 1] }}
                                     transition={{ duration: 1 }}
-                                    src={image.image}
-                                    alt="image6"
+                                    src={image2}
+                                    alt={`image${index + 1}`}
                                     className="bg-gray w-full h-full "
                                 />
                             </div>

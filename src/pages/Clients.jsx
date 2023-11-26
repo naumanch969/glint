@@ -14,16 +14,33 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react"
+import { useEffect } from "react"
 
 
 
 const Clients = () => {
 
+    //////////////////////////////////////// VARIABLES //////////////////////////////////////////////
+    const sectionRef = useRef()
     const testimonialRef = useRef(null)
+
+    //////////////////////////////////////// STATES //////////////////////////////////////////////
     const [currentSlideIndex, setCurrentSlideIndex] = useState(null)
 
+    //////////////////////////////////////// USE EFFECT //////////////////////////////////////////////
+    useEffect(() => {
+        const updateHeight = () => {
+            const heightInVh = (sectionRef.current.offsetHeight / window.innerHeight) * 100;
+            sectionRef.current.style.top = `-${heightInVh - 100}vh`;
+        };
+        updateHeight();
+        window.addEventListener('scroll', updateHeight);
 
-
+        return () => {
+            window.removeEventListener('scroll', updateHeight);
+        };
+    }, []);
+    //////////////////////////////////////// FUNCTIOSN //////////////////////////////////////////////
     const moveForward = (index) => {
         if (testimonialRef.current !== null) {
             testimonialsArr.length == index
@@ -35,7 +52,6 @@ const Clients = () => {
         }
     }
 
-
     const moveBack = (index) => {
         if (testimonialRef.current !== null) {
             index < 0
@@ -43,7 +59,6 @@ const Clients = () => {
                 testimonialRef.current.swiper.slideTo(testimonialsArr.length)            // if current slide is first then move to lasat slide
                 :
                 testimonialRef.current.swiper.slideTo(index)        // move to previous slide
-
         }
     }
 
@@ -51,9 +66,9 @@ const Clients = () => {
 
 
     return (
-        <section name='clients' className="
-            flex flex-col justify-between items-center gap-[5rem] relative z-10 w-full bg-silver pb-[10rem]
-            px-[14px] py-[7rem]
+        <section ref={sectionRef} name='clients' className="
+            flex flex-col justify-between items-center gap-[5rem] z-10 w-full bg-silver pb-[10rem]
+            px-[14px] py-[7rem] sticky top-0
             sm:px-[3rem] sm:py-[7rem]
             md:px-[64px] md:py-[10rem]
         ">

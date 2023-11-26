@@ -1,17 +1,33 @@
 import { FormatPaint, Campaign, Public, DeveloperBoard, ViewInAr, Inbox } from "@mui/icons-material"
 
 import { Heading, ServiceCard } from "../components"
+import { useEffect, useRef } from "react";
 
 
 
 const Services = () => {
 
+    //////////////////////////////////////// VARIABLES //////////////////////////////////////////////
+    const sectionRef = useRef()
 
+    //////////////////////////////////////// USE EFFECT //////////////////////////////////////////////
+    useEffect(() => {
+        const updateHeight = () => {
+            const heightInVh = (sectionRef.current.offsetHeight / window.innerHeight) * 100;
+            sectionRef.current.style.top = `-${heightInVh - 100}vh`;
+        };
+        updateHeight();
+        window.addEventListener('scroll', updateHeight);
+
+        return () => {
+            window.removeEventListener('scroll', updateHeight);
+        };
+    }, []);
 
     return (
-        <section name="services" className="
-            flex flex-col justify-between gap-[0rem] relative z-10 w-full
-            bg-white  
+        <section ref={sectionRef} name="services" className="
+            flex flex-col justify-between gap-[0rem] z-10 w-full
+            bg-white sticky top-0
             px-[14px] py-[7rem]
             sm:px-[3rm] sm:py-[7rem]
             md:px-[64px] md:py-[10rem]

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Facebook, Twitter, Instagram, Close } from "@mui/icons-material"
 import { contact } from "../assets"
 import { motion } from "framer-motion"
@@ -7,13 +7,29 @@ import { Heading } from '../components'
 
 const Contact = () => {
 
+    /////////////////////////////////////// VARIABLES /////////////////////////////////////////////
     const initialState = { name: '', email: '', message: '', subject: '' }
+    const sectionRef = useRef()
+    
+    /////////////////////////////////////// STATES /////////////////////////////////////////////
     const [contactData, setContactData] = useState(initialState)
     const [validationMessage, setValidationMessage] = useState(initialState)
-
     const validated = validationMessage.name == '' && validationMessage.email == '' && validationMessage.message == '' && validationMessage.subject == ''
 
+    //////////////////////////////////////// USE EFFECT //////////////////////////////////////////////
+    useEffect(() => {
+        const updateHeight = () => {
+            const heightInVh = (sectionRef.current.offsetHeight / window.innerHeight) * 100;
+            sectionRef.current.style.top = `-${heightInVh - 100}vh`;
+        };
+        updateHeight();
+        window.addEventListener('scroll', updateHeight);
 
+        return () => {
+            window.removeEventListener('scroll', updateHeight);
+        };
+    }, []);
+    /////////////////////////////////////// FUNCTIONS /////////////////////////////////////////////
     const handleChange = (e) => {
         setContactData({ ...contactData, [e.target.name]: e.target.value })
     }
@@ -73,9 +89,9 @@ const Contact = () => {
 
 
     return (
-        <section name="contact" style={{ backgroundImage: `url(${contact})` }} className=" 
-            flex flex-col justify-between items-center gap-[5rem] relative z-10 w-full bg-black  pt-[10rem]
-            px-[14px] py-[7rem] 
+        <section ref={sectionRef} name="contact" style={{ backgroundImage: `url(${contact})` }} className=" 
+            flex flex-col justify-between items-center gap-[5rem] z-10 w-full bg-black  pt-[10rem]
+            px-[14px] py-[7rem] sticky top-0
             sm:px-[3rem] sm:py-[7rem]
             md:px-[64px] md:py-[10rem]
         ">

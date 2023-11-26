@@ -18,7 +18,7 @@ const App = () => {
   }, []);
 
   const handleScroll = () => {
-    if (window.scrollY >= 250) {
+    if (window.scrollY >= (window.innerHeight + 2)) { // if window scrolled to 200vh + 2px
       setScrolled(true)
     }
     else {
@@ -28,18 +28,12 @@ const App = () => {
 
 
   return (
-    <div className=" min-w-screen min-h-screen flex flex-col font-cursive   bg-black text-white  ">
+    <div className="min-w-screen min-h-screen flex flex-col font-cursivebg-black text-white  ">
 
 
 
 
-      <div style={{ transition: 'all 0.5s linear' }} className={` 
-          ${scrolled && 'bg-black'} rounded-[4px] z-50 px-[10px] py-[4px]
-          flex justify-between items-center gap-[1rem] fixed
-          right-[20px] top-[30px] 
-          sm:right-[20px] sm:top-[30px] 
-          md:right-[64px] md:top-[2rem] 
-        `} >
+      <div style={{ transition: 'all 0.5s linear' }} className={`${scrolled && 'bg-black'} rounded-[4px] z-50 px-[10px] py-[4px] flex justify-between items-center gap-[1rem] fixed right-[20px] top-[30px]  sm:right-[20px] sm:top-[30px]  md:right-[64px] md:top-[2rem] `} >
         <p className={`text-green text-[24px] `} >Menu</p>
         <button onClick={() => setShowNavbar(pre => !pre)} className="flex flex-col justify-between items-center gap-[8px] " >
           <Menu />

@@ -16,18 +16,26 @@ module.exports = {
         'white': '#fff',
         'black': '#000',
         'darkGray': '#111111',
+        'gray': '#1a1a1a',
+        'shadowGray': '#2d2c2c',
         'lightGray': '#161616',
         'textGray': '#595954',
         'silver': '#e6e6e6',
-      },
-      animation: {
-        slowfade: 'slowfade 2.2s ease-in-out',
       },
       keyframes: {
         slowfade: {
           from: { opacity: 0 },
           to: { opacity: 1 },
         },
+        header_bubbles: {
+          '0%': { scale: 0, translateY: '100vh' },
+          '50%': { scale: 0.5, translateY: '45vh' },
+          '100%': { scale: 1, translateY: '-10vh' },
+        },
+      },
+      animation: {
+        'slow-fade': 'slowfade 2s ease-in-out',
+        'header-bubbles': 'header_bubbles 2s ease-in-out',
       },
     },
   },

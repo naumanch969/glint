@@ -1,124 +1,228 @@
-import { useState } from 'react'
-import { Link } from "react-scroll"
-import { motion } from "framer-motion"
-import { Typography } from '@mui/material'
-import { Facebook, Twitter, Instagram, KeyboardArrowDown } from "@mui/icons-material"
-import { Navbar } from "../components"
-import { parallaxImage } from "../assets"
+import React, { useState } from 'react';
+import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
+import { Facebook, Twitter, Instagram, KeyboardArrowDown } from '@mui/icons-material';
+import { getRandomNumber } from '../utils/functions';
+import {
+    FaHtml5,
+    FaNodeJs,
+    FaReact,
+    FaCss3Alt,
+    FaGithub,
+    FaGitAlt,
+    FaCode,
+} from 'react-icons/fa';
+import { RiMiniProgramFill } from 'react-icons/ri';
+import {
+    SiExpress,
+    SiTailwindcss,
+    SiRedux,
+    SiMongodb,
+    SiMongoose,
+    SiMui,
+    SiAxios,
+} from 'react-icons/si';
+import { IoLogoJavascript } from 'react-icons/io';
+import { TbBrandVscode } from 'react-icons/tb';
+import { BsFillFileEarmarkCodeFill } from 'react-icons/bs';
+import { useEffect } from 'react';
 
 const Header = () => {
+    const icons = [
+        { heading: 'React JS', icon: FaReact, color: '#61dafb' },
+        { heading: 'Node JS', icon: FaNodeJs, color: '#8cc84b' },
+        { heading: 'Express JS', icon: SiExpress, color: '#fff' },
+        { heading: 'Tailwind CSS', icon: SiTailwindcss, color: '#38b2ac' },
+        { heading: 'React Redux', icon: SiRedux, color: '#764abc' },
+        { heading: 'HTML', icon: FaHtml5, color: '#e44d26' },
+        { heading: 'CSS', icon: FaCss3Alt, color: '#264de4' },
+        { heading: 'Javascript', icon: IoLogoJavascript, color: '#f0db4f' },
+        { heading: 'MongoDB', icon: SiMongodb, color: '#4db33d' },
+        { heading: 'Mongoose', icon: SiMongoose, color: '#8f4b2d' },
+        { heading: 'Github', icon: FaGithub, color: '#fff' },
+        { heading: 'Git', icon: FaGitAlt, color: '#f34f29' },
+        { heading: 'MUI', icon: SiMui, color: '#0081cb' },
+        { heading: 'Axios', icon: SiAxios, color: '#fff' },
+        { heading: 'Code', icon: FaCode, color: '#fff' },
+        { heading: 'Web Development', icon: BsFillFileEarmarkCodeFill, color: '#f58025' },
+        { heading: 'VS Code', icon: TbBrandVscode, color: '#007acc' },
+        { heading: 'Web Development', icon: RiMiniProgramFill, color: '#e84393' },
+    ];
 
-    // sm = tablet 
-    // md = lare tablet 
-    // l = laptop
-    // xl = desktop
+    const initialBubbles = Array(20).fill('').map(() => ({
+        key: getRandomNumber(0, 10),
+    }));
+    const DESIGN = () => (
+        <>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >D</span>
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >I</span>
+            </div>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >E</span>
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >G</span>
+            </div>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >S</span>
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >N</span>
+            </div>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' ></span>
+            </div>
+        </>
+    )
+    const CODE = () => (
+        <>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >C</span>
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >D</span>
+            </div>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >O</span>
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >E</span>
+            </div>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' ></span>
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' ></span>
+            </div>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' ></span>
+            </div>
+        </>
+    )
+    const DEVELOP = () => (
+        <>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >D</span>
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >E</span>
+            </div>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >E</span>
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >L</span>
+            </div>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >V</span>
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >O</span>
+            </div>
+            <div className="bg-gray w-full h-full flex flex-col items-center ">
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' ></span>
+                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >P</span>
+            </div>
+        </>
+    )
+    const Ring = ({ size }) => (
+        <span className={`${size == 'sm' ? 'border-[12px]' : size == 'md' ? 'border-[20px]' : 'border-[24px]'}  border-green rounded-[1rem] flex justify-center items-center `} >
+            <span className={`${size == 'sm' ? 'w-[12px] h-[12px]' : size == 'md' ? 'w-[16px] h-[16px]' : 'w-[20px] h-[20px]'} bg-gray rounded-[1rem] `} >.</span>
+        </span>
+    )
+
+    ///////////////////////////////////// STATE ///////////////////////////////////////////
+    const [bubbles, setBubbles] = useState(initialBubbles);
+    const [shadowComponent, setShadowComponent] = useState(<DEVELOP />);
+
+
+    ///////////////////////////////////// USE EFFECT ///////////////////////////////////////////
+    useEffect(() => {
+        const components = [<DESIGN />, <CODE />, <DEVELOP />];
+        let currentIndex = 0;
+
+        const intervalId = setInterval(() => {
+            setShadowComponent(components[currentIndex]);
+            currentIndex = (currentIndex + 1) % components.length;
+        }, 5000);
+
+        // Clean up the interval on component unmount
+        return () => clearInterval(intervalId);
+    }, []);
 
 
     return (
-        <section
-            name="home"
-            style={{ backgroundImage: `url(${parallaxImage})` }}
-            className={`
-                flex flex-col justify-between gap-[10rem] relative z-10 w-full pb-[12rem]
-                bg-fixed bg-no-repeat bg-cover   
-                px-[14px] pt-[20px] 
-                sm:px-[3rem] sm:pt-[20px]  
-                md:px-[64px] md:pt-[1.5rem] 
-            `}
-        >
+        <>
+            <section name="home" className={`min-h-screen bg-black flex flex-col justify-between gap-[10rem] w-full pb-[12rem] bg-fixed bg-no-repeat bg-cover px-[14px] pt-[20px] sm:px-[3rem] sm:pt-[20px] md:px-[64px] md:pt-[1.5rem] relative z-[1]`}>
 
-
-
-            {/* logo */}
-            <div className="bg-transparent flex justify-between  mt-0 " >
-                <div className="flex items-end justify-center " >
-                    <h4 className="text-[40px] text-semibold " >Glint<span className="w-[10px] h-[10px] inline-flex ml-[4px] rounded-full bg-green " /></h4>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-            {/* main header content */}
-            <motion.div
-                whileInView={{ y: [0, 1], opacity: [0, 1] }}
-                transition={{ duration: 1, ease: 'linear' }}
-                className="
-                    flex flex-col gap-[12px]
-                    items-center w-full 
-                    sm:items-center 
-                    md:items-start md:px-0
-                    lg:pl-[4rem] lg:px-[64px] 
-                "
-            >
-
-
-                {/* subHeading */}
-                <h5 className="text-[24px] text-textGray tracking-[1px]  " >Welcome to Glint</h5>
-
-
-
-                {/* heading */}
-                <div className="
-                    w-full flex items-center
-                    justify-center
-                    sm:justify-center
-                    md:justify-between
-                " >
-
-                    <h1 className="w-full font-bold md:text-start md:text-[60px] md:w-[45rem]  sm:text-center sm:text-[40px] sm:w-[30rem] text-center  text-[36px] " >
-                        We are creative group of people who design influential brands and digital experiences.
-                    </h1>
-                    <div className=" 
-                        flex-col gap-[1rem] 
-                        hidden                                  
-                        sm:hidden                               
-                        md:flex
-                      " >
-                        <button className="p-[4px] rounded-full border-white border-[3px] flex justify-center items-center " ><Facebook /></button>
-                        <button className="p-[4px] rounded-full border-white border-[3px] flex justify-center items-center " ><Twitter /></button>
-                        <button className="p-[4px] rounded-full border-white border-[3px] flex justify-center items-center " ><Instagram /></button>
-                        <button className="p-[4px] rounded-full border-white border-[3px] flex justify-center items-center " ><Facebook /></button>
-                        <button className="p-[4px] rounded-full border-white border-[3px] flex justify-center items-center " ><Twitter /></button>
+                {/* Background Text (Design, Code, Develop) */}
+                <div className="h-screen w-screen fixed top-0 right-0 grid grid-cols-12 gap-1 z-[1]">
+                    <div className="bg-gray h-full flex flex-col items-center col-span-1 relative " >
+                        <div className="absolute bottom-32 ">
+                            <Ring size='md' />
+                        </div>
                     </div>
-
+                    <div className="col-span-10 grid grid-cols-4 gap-1 ">
+                        {shadowComponent}
+                    </div>
+                    <div className="bg-gray h-full flex flex-col items-center col-span-1 " />
+                </div>
+                <div className="h-screen w-screen fixed top-0 right-0 flex justify-around z-[2]">
+                    <div className="container relative h-screen overflow-hidden w-full z-[1]">
+                        <div className="bubbles flex flex-wrap justify-between gap-4 z-[3]">
+                            {bubbles.map((bubble, index) => {
+                                const [showCloud, setShowCloud] = useState(false)
+                                const icon = icons[index % icons.length]
+                                return (
+                                    <motion.span
+                                        onMouseEnter={() => setShowCloud(true)}
+                                        onMouseLeave={() => setShowCloud(false)}
+                                        style={{ '--i': bubble.key, color: icon.color }}
+                                        className={`${showCloud ? 'bg-gray-800' : ''} transition-all p-2 rounded-md flex justify-center items-center gap-4 cursor-pointer hover:scale-110 relative m-0 4px shadow-bubble animate-bubble z-[1000]`}
+                                    >
+                                        <icon.icon className={`${showCloud ? 'text-6xl' : 'text-3xl'} transition-all `} />
+                                        {showCloud && (
+                                            <div className="flex flex-col z-[1001] min-w-[4rem] ">
+                                                <h5 className='text-2xl capitalize ' >{icon.heading}</h5>
+                                                <div className="w-full flex justify-end items-center ">
+                                                    <button
+                                                        style={{ '--color': icon.color == '#fff' ? '#000' : '#fff', '--bg': icon.color }}
+                                                        className={`cloud-button mt-1 px-4 py-2 rounded-md transition-all duration-300 focus:outline-none`}
+                                                        onClick={() => handleHideColor(index)}
+                                                    >
+                                                        View
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </motion.span>
+                                )
+                            })}
+                        </div>
+                    </div>
                 </div>
 
+                {/* logo */}
+                <div className="fixed bg-transparent flex justify-between mt-0 z-[2] " >
+                    <div className="flex items-end justify-center " >
+                        <h4 className="text-[40px] text-semibold " >Glint<span className="w-[10px] h-[10px] inline-flex ml-[4px] rounded-full bg-green " /></h4>
+                    </div>
+                </div>
 
+                {/* Heading */}
+                <div className="h-screen w-screen fixed top-0 right-0 grid grid-cols-12 gap-1 z-[1]">
+                    <div className="col-span-1"></div>
+                    <div className="col-span-10 flex justify-between items-center w-full h-full ">
+                        <div className="">
+                            <h2 className="font-[cursive] flex flex-col gap-2 relative right-12 transform -rotate-90 whitespace-nowrap text-stone-300 text-[26px] ">
+                                <span><span className='text-green ' >MERN</span> Stack Developer</span>
+                                <span>Frontend <span className='text-green ' >Developer`</span></span>
+                                <span>Based in Islamabad</span>
+                            </h2>
+                        </div>
+                        <div className="flex flex-col justify-center items-start w-fit h-full z-[1] pr-[5rem] relative ">
+                            <div className="absolute top-12 right-[35%] ">
+                                <Ring size='lg' />
+                            </div>
+                            <h2 className='text-[9rem] font-bold h-[10rem] relative' >Hello <div className='absolute bottom-0 right-[-2.5rem] w-7 h-7 bg-green rounded-full' /></h2>
+                            <h1 className='text-[9rem] font-bold h-[10rem] ' >I am </h1>
+                            <h1 className='text-[9rem] font-bold h-[10rem] ' >Nauman</h1>
+                            <div className="absolute bottom-4 ">
+                                <Ring size='sm' />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-span-1"></div>
+                </div>
 
-
-                {/* buttons */}
-                <div className="
-                    flex  gap-[24px] mt-[2rem] 
-                    flex-col justify-center items-center w-full
-                    sm:flex-col sm:w-full sm:justify-center sm:items-center
-                    md:w-fit md:flex-row md:justify-start 
-                " >
-                    <Link
-                        id="link"
-                        to='contact'
-                        activeClass="active"
-                        smooth={true}
-                        spy={true}
-                        offset={-100}
-                        duration={1000}
-                        style={{ transition: 'all 0.5s linear' }}
-                        className="
-                            text-center cursor-pointer border-[1px] border-white capitalize px-[40px]
-                            hover:bg-white hover:text-black 
-                            w-[90%] py-[10px]
-                            sm:w-[70%] sm:py-[10px]
-                            md:w-fit md:py-[16px]
-                        "
-                    >
-                        start a project
-                    </Link>
-
-                    <Link
+                {/* bottom left scroll down text button + vertical line */}
+                <div className="z-[2] fixed bottom-0 flex justify-between cursor-pointer md:gap-[2rem] md:right-[3rem] sm:gap-[2rem] sm:right-[3rem] gap-[1rem] right-[2rem] " >
+                    {/* <Link
                         id="link"
                         to='about'
                         activeClass="active"
@@ -126,49 +230,20 @@ const Header = () => {
                         spy={true}
                         offset={-100}
                         duration={1000}
-                        style={{ transition: 'all 0.5s linear' }}
-                        className="
-                          text-center cursor-pointer border-[1px] border-white capitalize px-[40px]
-                            hover:bg-white hover:text-black 
-                            w-[90%] py-[10px]
-                            sm:w-[70%] sm:py-[10px]
-                            md:w-fit md:py-[16px]
-                        "
+                        className="flex justify-center items-start md:gap-[8px] sm:gap-[8px] gap-0 "
                     >
-                        more about us
-                    </Link>
-
+                        <KeyboardArrowDown className="text-green " />
+                        <p className="capitalize text-white " >scroll down</p>
+                    </Link> */}
+                    <hr className="h-[7rem] w-[4px] bg-green " />
                 </div>
 
-            </motion.div>
+            </section>
 
+            <div className="sticky top-[-10vh] w-full h-[110vh] bg- bg-green"></div>
+        </>
 
+    );
+};
 
-
-
-            {/* bottom left scroll down text button + vertical line */}
-            <div className="absolute bottom-0 flex justify-between cursor-pointer md:gap-[2rem] md:right-[3rem] sm:gap-[2rem] sm:right-[3rem] gap-[1rem] right-[2rem] " >
-                <Link
-                    id="link"
-                    to='about'
-                    activeClass="active"
-                    smooth={true}
-                    spy={true}
-                    offset={-100}
-                    duration={1000}
-                    className="flex justify-center items-start md:gap-[8px] sm:gap-[8px] gap-0 "
-                >
-                    <KeyboardArrowDown className="text-green " />
-                    <p className="capitalize text-white " >scroll down</p>
-                </Link>
-                <hr className="h-[7rem] w-[4px] bg-green " />
-            </div>
-
-
-
-        </section>
-    )
-}
-
-
-export default Header
+export default Header;

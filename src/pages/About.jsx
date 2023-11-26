@@ -2,15 +2,31 @@
 import CountUp from 'react-countup';
 import { motion } from "framer-motion"
 import VisibilitySensor from 'react-visibility-sensor';
+import { useRef, useState } from 'react';
+import { useEffect } from 'react';
 
 const About = () => {
 
+    const sectionRef = useRef()
+
+    useEffect(() => {
+        const updateHeight = () => {
+            const heightInVh = (sectionRef.current.offsetHeight / window.innerHeight) * 100;
+            sectionRef.current.style.top = `-${heightInVh - 100}vh`;
+        };
+        updateHeight();
+        window.addEventListener('scroll', updateHeight);
+
+        return () => {
+            window.removeEventListener('scroll', updateHeight);
+        };
+    }, []);
 
 
     return (
-        <section name="about" className="
-            flex flex-col justify-between gap-[0rem] relative z-10 w-full pt-[10rem]
-            bg-green  
+        <section ref={sectionRef} name="about" className="
+            flex flex-col justify-between gap-[0rem] z-10 w-full pt-[10rem]
+            bg-green sticky top-0
             px-[14px] py-[7rem]
             sm:px-[3rem] sm:py-[7rem]
             md:px-[64px] md:py-[10rem]
@@ -19,12 +35,11 @@ const About = () => {
 
 
 
+
             {/* top right line */}
             <div className="absolute top-0 md:right-[3rem] sm:right-[3rem] right-[2rem] " >
                 <hr className="h-[7rem] w-[4px] bg-white " />
             </div>
-
-
 
             {/* heading */}
             <motion.div
@@ -34,13 +49,10 @@ const About = () => {
             >
                 <h5 className="uppercase text-black font-semibold tracking-[2px] md:text-[24px] sm:text-[22px] text-[20px] " >Hello There</h5>
                 <div className="w-fit flex flex-col items-center md:gap-[3rem] sm:gap-[2rem] gap-[1rem] " >
-                    <h2 className="capitalize text-center font-bold tracking-[2px] md:text-[84px] sm:text-[64px] text-[38px] " >we are glint</h2>
+                    <h2 className="capitalize text-center font-bold tracking-[2px] md:text-[84px] sm:text-[64px] text-[38px] " >Glint is here</h2>
                     <hr className="bg-white md:w-[120%] sm:w-full w-full " />
                 </div>
             </motion.div>
-
-
-
 
             {/* paragraph text */}
             <motion.div
@@ -48,13 +60,13 @@ const About = () => {
                 transition={{ duration: 1 }}
                 className="xl:px-[12rem] lg:px-[4rem] md:px-[2rem] md:py-[5rem] sm:py-[4rem] py-[3rem] "
             >
-                <p className="md:text-[24px] sm:text-[20px] text-white text-center " >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                <p className="md:text-[24px] sm:text-[20px] text-white text-center " >
+                    I'm Nauman Chaudhry, a seasoned MERN stack developer with a passion for crafting exceptional digital experiences. With over a year of dedicated experience, I've had the privilege of working on a diverse range of projects. These include comprehensive full-stack web applications and meticulously designed RESTful APIs, all powered by technologies like MongoDB, Express.js, React.js, and Node.js.
+                    <br /> My commitment to continuous learning keeps me at the forefront of industry trends. I thrive on exploring new horizons in technology and contributing to open-source projects. Being an active part of coding communities brings me joy and enriches my knowledge.
+                    <br /> I sincerely appreciate your presence on my portfolio. Whether you have inquiries or a collaborative project in mind, please don't hesitate to reach out. Together, we can shape the future of the digital landscape.
+                    <br /> Best regards, Nauman Chaudhry
+                </p>
             </motion.div>
-
-
-
-
-
 
             {/* about cards */}
             <motion.div
