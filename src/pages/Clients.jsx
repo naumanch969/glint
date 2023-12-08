@@ -78,12 +78,12 @@ const Clients = () => {
             {/* clients icon */}
             <div className="w-full flex flex-col justify-between items-center gap-[4rem] " >
 
-                <Heading subHeading='our clients' heading='Glint has been honored to partner up with these clients' subHeadingColor='green' headingColor='black' />
+                <Heading subHeading='our clients' heading='What they are saying about Glint' subHeadingColor='green' headingColor='black' />
 
 
-                <motion.div
+                {/* <motion.div
                     whileInView={{ y: [0, 1], opacity: [0, 1] }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.3 }}
                     className="flex justify-between items-center w-full "
                 >
 
@@ -112,10 +112,10 @@ const Clients = () => {
                         }
                     </Swiper>
 
-                </motion.div>
+                </motion.div> */}
 
 
-                <hr className="h-[2px]  bg-textGray md:w-[40rem] sm:w-[80%] w-[80%]  " />
+                {/* <hr className="h-[2px]  bg-textGray md:w-[40rem] sm:w-[80%] w-[80%]  " /> */}
 
             </div>
 
@@ -129,7 +129,7 @@ const Clients = () => {
             {/* testimonials */}
             <motion.div
                 whileInView={{ y: [0, 1], opacity: [0, 1] }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.3 }}
                 className="flex justify-between items-center w-full "
             >
 
@@ -138,7 +138,7 @@ const Clients = () => {
                     slidesPerView={1}
                     spaceBetween={10}
                     pagination={{ clickable: true, }}
-                    modules={[Pagination]}
+                    // modules={[Pagination]}
                     className=" text-center w-full text-lightGray pb-[3rem] "
                     onSlideChange={(swiper) => setCurrentSlideIndex(swiper.activeIndex)}
                 >
@@ -151,7 +151,7 @@ const Clients = () => {
                                     <button onClick={() => moveForward(currentSlideIndex + 1)}  > <East className="text-black  md:text-[32px] sm:text-[24px] text-[20px] " /></button>
                                 </div>
                                 <div className="flex flex-col justify-center items-center " >
-                                    <img src={testimonial.image} alt="" style={{ width: '5rem', height: '5rem' }} className="rounded-full md:w-[6rem] md:h-[6rem] sm:w-[5rem] sm:h-[5rem] w-[5rem] h-[5rem]  " />
+                                    <img src={testimonial.image} alt="" style={{ width: '5rem', height: '5rem' }} className="rounded-full object-cover md:w-[6rem] md:h-[6rem] sm:w-[5rem] sm:h-[5rem] w-[5rem] h-[5rem]  " />
                                     <h5 className="md:text-[24px] sm:text-[22px] text-[18px] font-semibold " >{testimonial.name}</h5>
                                     <h6 className="md:text-[20px] sm:text-[18px] text-[14px] font-medium " >{testimonial.designation}</h6>
                                 </div>
@@ -193,29 +193,26 @@ export default Clients
 
 const testimonialsArr = [
     {
-        text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.',
-        name: 'Elen Hallay',
-        designation: 'CEO NewTech',
-        image: person1
+        name: 'Huzaifa Ramzan',
+        image: person1,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua incididunt ut labore et dolore magna aliqua.',
+        company: 'Starlight',
+        title: 'Product Manager'
     },
     {
-        text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.',
-        name: 'Robert Edolf',
-        designation: 'Founder Dev',
-        image: person2
+        name: 'Hamza Zulfiqar',
+        image: person3,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua incididunt ut labore et dolore magna aliqua.',
+        company: 'Starlight',
+        title: 'Product Manager'
     },
     {
-        text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.',
-        name: 'Simen Sinek',
-        designation: 'Senior Programmer Mozila',
-        image: person3
-    },
-    {
-        text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.',
-        name: 'Merry Mukesh',
-        designation: 'CEO Fox',
-        image: person4
-    },
+        name: 'Hassan Ahmad',
+        image: person4,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua incididunt ut labore et dolore magna aliqua.',
+        company: 'Starlight',
+        title: 'Product Manager'
+    }
 ]
 
 const clientsIcon = [

@@ -52,78 +52,42 @@ const Header = () => {
     const initialBubbles = Array(20).fill('').map(() => ({
         key: getRandomNumber(0, 10),
     }));
+
+    ///////////////////////////////////// STATE ///////////////////////////////////////////
+    const [bubbles, setBubbles] = useState(initialBubbles);
+    const [shadowComponent, setShadowComponent] = useState('Develop');
+
     const DESIGN = () => (
         <>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >D</span>
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >I</span>
+            <div className="bg-gray w-full h-full flex flex-col items-center sm:py-0 py-20 ">
+                <span className='text-shadowGray lg:text-[22rem] md:text-[18rem] sm:text-[14rem] text-[9rem] font-[fantasy] md:h-[23rem] sm:h-[18rem] h-[8rem] transition-all ' >{shadowComponent == 'Develop' ? 'D' : shadowComponent == 'Code' ? 'C' : shadowComponent == 'Design' ? 'D' : ''}</span>
+                <span className='text-shadowGray lg:text-[22rem] md:text-[18rem] sm:text-[14rem] text-[9rem] font-[fantasy] md:h-[23rem] sm:h-[18rem] h-[8rem] transition-all ' >{shadowComponent == 'Develop' ? 'I' : shadowComponent == 'Code' ? 'D' : shadowComponent == 'Design' ? 'E' : ''}</span>
             </div>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >E</span>
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >G</span>
+            <div className="bg-gray w-full h-full flex flex-col items-center sm:py-0 py-20 ">
+                <span className='text-shadowGray lg:text-[22rem] md:text-[18rem] sm:text-[14rem] text-[9rem] font-[fantasy] md:h-[23rem] sm:h-[18rem] h-[8rem] transition-all ' >{shadowComponent == 'Develop' ? 'E' : shadowComponent == 'Code' ? 'O' : shadowComponent == 'Design' ? 'E' : ''}</span>
+                <span className='text-shadowGray lg:text-[22rem] md:text-[18rem] sm:text-[14rem] text-[9rem] font-[fantasy] md:h-[23rem] sm:h-[18rem] h-[8rem] transition-all ' >{shadowComponent == 'Develop' ? 'G' : shadowComponent == 'Code' ? 'E' : shadowComponent == 'Design' ? 'L' : ''}</span>
             </div>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >S</span>
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >N</span>
+            <div className="bg-gray w-full h-full flex flex-col items-center sm:py-0 py-20 ">
+                <span className='text-shadowGray lg:text-[22rem] md:text-[18rem] sm:text-[14rem] text-[9rem] font-[fantasy] md:h-[23rem] sm:h-[18rem] h-[8rem] transition-all ' >{shadowComponent == 'Develop' ? 'S' : shadowComponent == 'Code' ? '' : shadowComponent == 'Design' ? 'V' : ''}</span>
+                <span className='text-shadowGray lg:text-[22rem] md:text-[18rem] sm:text-[14rem] text-[9rem] font-[fantasy] md:h-[23rem] sm:h-[18rem] h-[8rem] transition-all ' >{shadowComponent == 'Develop' ? 'N' : shadowComponent == 'Code' ? '' : shadowComponent == 'Design' ? 'O' : ''}</span>
             </div>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' ></span>
-            </div>
-        </>
-    )
-    const CODE = () => (
-        <>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >C</span>
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >D</span>
-            </div>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >O</span>
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >E</span>
-            </div>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' ></span>
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' ></span>
-            </div>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' ></span>
+            <div className="bg-gray w-full h-full flex flex-col items-center sm:py-0 py-20 ">
+                <span className='text-shadowGray lg:text-[22rem] md:text-[18rem] sm:text-[14rem] text-[9rem] font-[fantasy] md:h-[23rem] sm:h-[18rem] h-[8rem] transition-all ' >{shadowComponent == 'Develop' ? '' : shadowComponent == 'Code' ? '' : shadowComponent == 'Design' ? '' : ''}</span>
+                <span className='text-shadowGray lg:text-[22rem] md:text-[18rem] sm:text-[14rem] text-[9rem] font-[fantasy] md:h-[23rem] sm:h-[18rem] h-[8rem] transition-all ' >{shadowComponent == 'Develop' ? '' : shadowComponent == 'Code' ? '' : shadowComponent == 'Design' ? 'P' : ''}</span>
             </div>
         </>
     )
-    const DEVELOP = () => (
-        <>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >D</span>
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >E</span>
-            </div>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >E</span>
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >L</span>
-            </div>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >V</span>
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >O</span>
-            </div>
-            <div className="bg-gray w-full h-full flex flex-col items-center ">
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' ></span>
-                <span className='text-shadowGray text-[22rem] font-[fantasy] h-[23rem] transition-all ' >P</span>
-            </div>
-        </>
-    )
+
+
     const Ring = ({ size }) => (
         <span className={`${size == 'sm' ? 'border-[12px]' : size == 'md' ? 'border-[20px]' : 'border-[24px]'}  border-green rounded-[1rem] flex justify-center items-center `} >
             <span className={`${size == 'sm' ? 'w-[12px] h-[12px]' : size == 'md' ? 'w-[16px] h-[16px]' : 'w-[20px] h-[20px]'} bg-gray rounded-[1rem] `} >.</span>
         </span>
     )
 
-    ///////////////////////////////////// STATE ///////////////////////////////////////////
-    const [bubbles, setBubbles] = useState(initialBubbles);
-    const [shadowComponent, setShadowComponent] = useState(<DEVELOP />);
-
-
     ///////////////////////////////////// USE EFFECT ///////////////////////////////////////////
     useEffect(() => {
-        const components = [<DESIGN />, <CODE />, <DEVELOP />];
+        const components = ['Design', 'Code', 'Develop'];
         let currentIndex = 0;
 
         const intervalId = setInterval(() => {
@@ -141,18 +105,17 @@ const Header = () => {
             <section name="home" className={`min-h-screen bg-black flex flex-col justify-between gap-[10rem] w-full pb-[12rem] bg-fixed bg-no-repeat bg-cover px-[14px] pt-[20px] sm:px-[3rem] sm:pt-[20px] md:px-[64px] md:pt-[1.5rem] relative z-[1]`}>
 
                 {/* Background Text (Design, Code, Develop) */}
-                <div className="h-screen w-screen fixed top-0 right-0 grid grid-cols-12 gap-1 z-[1]">
-                    <div className="bg-gray h-full flex flex-col items-center col-span-1 relative " >
-                        <div className="absolute bottom-32 ">
-                            <Ring size='md' />
-                        </div>
+                <div className="shadow-text h-screen w-screen fixed top-0 right-0 grid md:grid-cols-12 grid-cols-4 gap-1 z-[1]">
+                    <div className="bg-gray h-full flex-col items-center sm:col-span-1 relative md:flex hidden " >
+                        <div className="absolute bottom-32 "><Ring size='md' /></div>
                     </div>
-                    <div className="col-span-10 grid grid-cols-4 gap-1 ">
-                        {shadowComponent}
+                    <div className="col-span-10 grid grid-cols-4  gap-1 ">
+                        <DESIGN />
                     </div>
-                    <div className="bg-gray h-full flex flex-col items-center col-span-1 " />
+                    <div className="bg-gray h-full flex-col items-center sm:col-span-1 md:flex hidden " />
                 </div>
-                <div className="h-screen w-screen fixed top-0 right-0 flex justify-around z-[2]">
+                {/* Bubbles */}
+                <div className="bubbles h-screen w-screen fixed top-0 right-0 flex justify-around z-[2]">
                     <div className="container relative h-screen overflow-hidden w-full z-[1]">
                         <div className="bubbles flex flex-wrap justify-between gap-4 z-[3]">
                             {bubbles.map((bubble, index) => {
@@ -160,6 +123,7 @@ const Header = () => {
                                 const icon = icons[index % icons.length]
                                 return (
                                     <motion.span
+                                        key={index}
                                         onMouseEnter={() => setShowCloud(true)}
                                         onMouseLeave={() => setShowCloud(false)}
                                         style={{ '--i': bubble.key, color: icon.color }}
@@ -167,9 +131,9 @@ const Header = () => {
                                     >
                                         <icon.icon className={`${showCloud ? 'text-6xl' : 'text-3xl'} transition-all `} />
                                         {showCloud && (
-                                            <div className="flex flex-col z-[1001] min-w-[4rem] ">
+                                            <div className="flex flex-col justify-center z-[1001] min-w-[4rem] ">
                                                 <h5 className='text-2xl capitalize ' >{icon.heading}</h5>
-                                                <div className="w-full flex justify-end items-center ">
+                                                {/* <div className="w-full flex justify-end items-center ">
                                                     <button
                                                         style={{ '--color': icon.color == '#fff' ? '#000' : '#fff', '--bg': icon.color }}
                                                         className={`cloud-button mt-1 px-4 py-2 rounded-md transition-all duration-300 focus:outline-none`}
@@ -177,7 +141,7 @@ const Header = () => {
                                                     >
                                                         View
                                                     </button>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         )}
                                     </motion.span>
@@ -195,26 +159,22 @@ const Header = () => {
                 </div>
 
                 {/* Heading */}
-                <div className="h-screen w-screen fixed top-0 right-0 grid grid-cols-12 gap-1 z-[1]">
+                <div className="heading h-screen w-screen fixed top-0 right-0 grid grid-cols-12 gap-1 z-[1]">
                     <div className="col-span-1"></div>
                     <div className="col-span-10 flex justify-between items-center w-full h-full ">
                         <div className="">
-                            <h2 className="font-[cursive] flex flex-col gap-2 relative right-12 transform -rotate-90 whitespace-nowrap text-stone-300 text-[26px] ">
+                            <h2 className="font-[cursive] flex flex-col gap-2 relative md:right-12 md:top-0 left-[-6rem] top-[16rem] transform -rotate-90 whitespace-nowrap text-stone-300 text-[26px] ">
                                 <span><span className='text-green ' >MERN</span> Stack Developer</span>
                                 <span>Frontend <span className='text-green ' >Developer`</span></span>
                                 <span>Based in Islamabad</span>
                             </h2>
                         </div>
-                        <div className="flex flex-col justify-center items-start w-fit h-full z-[1] pr-[5rem] relative ">
-                            <div className="absolute top-12 right-[35%] ">
-                                <Ring size='lg' />
-                            </div>
-                            <h2 className='text-[9rem] font-bold h-[10rem] relative' >Hello <div className='absolute bottom-0 right-[-2.5rem] w-7 h-7 bg-green rounded-full' /></h2>
-                            <h1 className='text-[9rem] font-bold h-[10rem] ' >I am </h1>
-                            <h1 className='text-[9rem] font-bold h-[10rem] ' >Nauman</h1>
-                            <div className="absolute bottom-4 ">
-                                <Ring size='sm' />
-                            </div>
+                        <div className="flex flex-col justify-center items-start w-fit h-full z-[1] pr-[5rem] lg:relative absolute md:right-0  ">
+                            <div className="absolute top-12 right-[35%] "><Ring size='lg' /></div>
+                            <h2 className='lg:text-[9rem] md:text-[7.5rem] sm:text-[6rem] text-[2rem] font-bold md:h-[10rem] sm:h-[8rem] h-[2rem] relative' >Hello <div className='absolute bottom-0 md:right-[-2.5rem] sm:right-[-1.5rem] right-[-1rem] lg:w-7 lg:h-7 md:w-6 md:h-6 sm:h-5 sm:w-5 h-3 w-3 bg-green rounded-full' /></h2>
+                            <h1 className='lg:text-[9rem] md:text-[7.5rem] sm:text-[6rem] text-[5rem] font-bold md:h-[10rem] sm:h-[8rem] h-[6rem] ' >I am </h1>
+                            <h1 className='lg:text-[9rem] md:text-[7.5rem] sm:text-[6rem] text-[5rem] font-bold md:h-[10rem] sm:h-[8rem] h-[6rem] ' >Nauman</h1>
+                            <div className="absolute bottom-4 "><Ring size='sm' /></div>
                         </div>
                     </div>
                     <div className="col-span-1"></div>

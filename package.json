@@ -26,7 +26,8 @@
     "react-scroll": "^1.8.9",
     "react-spring": "^9.6.1",
     "react-visibility-sensor": "^5.1.1",
-    "swiper": "^8.4.7"
+    "swiper": "^11.0.5",
+    "vanilla-tilt": "^1.8.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

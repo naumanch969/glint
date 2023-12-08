@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import { Facebook, Twitter, Instagram, Close } from "@mui/icons-material"
+import { Facebook, Twitter, Instagram, Close, GitHub } from "@mui/icons-material"
 import { contact } from "../assets"
 import { motion } from "framer-motion"
 import validator from "email-validator"
 import { Heading } from '../components'
+import { Link } from 'react-router-dom/dist'
 
 const Contact = () => {
 
@@ -112,7 +113,7 @@ const Contact = () => {
             {/* contact form */}
             <motion.div
                 whileInView={{ y: [0, 1], opacity: [0, 1] }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.3 }}
                 className="flex w-full h-full xl:px-[8rem] lg:flex-row lg:px-[5rem] md:flex-col md:px-[2rem] sm:flex-col sm:px-[2rem] px-0 flex-col "
             >
 
@@ -239,25 +240,24 @@ const Contact = () => {
 
 
                 {/* right contact side */}
-                <div className="bg-darkGray flex flex-col gap-[5rem] lg:w-[35%] md:w-full md:px-[3rem] md:pt-[4rem] md:pb-[6rem] sm:w-full sm:px-[3rem] sm:pt-[3rem] sm:pb-[5rem] w-full px-[1rem] pt-[3rem] pb-[3rem]  " >
+                <div className="bg-darkGray flex flex-col md:gap-[2rem] lg:w-[35%] md:w-full md:px-[3rem] md:pt-[4rem] md:pb-[6rem] sm:w-full sm:px-[3rem] sm:pt-[3rem] sm:pb-[5rem] w-full px-[1rem] pt-[3rem] pb-[3rem]  " >
                     <h4 className="uppercase text-white lg:block md:hidden sm:hidden hidden " >contact info</h4>
                     <div className="flex flex-col gap-[3rem] " >
                         {/* info */}
-                        <div className="flex flex-col gap-[3rem] " >
+                        <div className="flex flex-col gap-[1.5rem] " >
                             {/* address */}
-                            <div className="flex flex-col gap-[1rem] " >
+                            <div className="flex flex-col gap-[0.7rem] " >
                                 <h5 className="text-green text-[24px] capitalize  " >where to find us</h5>
                                 <p className="flex flex-col gap-[8px] " >
-                                    <span className="" >1600 Amphitheatre Parkway</span>
-                                    <span className="" >Mountain View, CA</span>
-                                    <span className="" >94043 US</span>
+                                    <span className="" >H12 Islamabad</span>
+                                    <span className="" >Pakistan</span>
                                 </p>
                             </div>
                             {/* email */}
                             <div className="flex flex-col gap-[1rem] " >
                                 <h5 className="text-green text-[24px] capitalize  " >email us at</h5>
                                 <p className="flex flex-col gap-[8px] " >
-                                    <span className="" >contact@glintsite.com</span>
+                                    <span className="" >naumanch969@gmail.com</span>
                                     <span className="" >info@glintsite.com</span>
                                 </p>
                             </div>
@@ -265,20 +265,19 @@ const Contact = () => {
                             <div className="flex flex-col gap-[1rem] " >
                                 <h5 className="text-green text-[24px] capitalize  " >call us at</h5>
                                 <p className="flex flex-col gap-[8px] " >
-                                    <span className="" >Phone: (+63) 555 1212</span>
-                                    <span className="" >Mobile: (+63) 555 0100</span>
-                                    <span className="" >Fax: (+63) 555 0101</span>
+                                    <span className="" >Phone: (+92) 305 5712534</span>
+                                    <span className="" >Phone: (+92) 325 3892909</span>
                                 </p>
                             </div>
 
                         </div>
                         {/* social icons */}
                         <div className="flex items-center flex-wrap md:justify-start md:gap-[1rem] sm:justify-start sm:gap-[1rem] justify-between gap-[0] " >
-                            <button className="p-[4px] rounded-full flex justify-center items-center " ><Facebook className="text-[1.5rem] " /></button>
-                            <button className="p-[4px] rounded-full flex justify-center items-center " ><Twitter className="text-[1.5rem] " /></button>
-                            <button className="p-[4px] rounded-full flex justify-center items-center " ><Instagram className="text-[1.5rem] " /></button>
-                            <button className="p-[4px] rounded-full flex justify-center items-center " ><Facebook className="text-[1.5rem] " /></button>
-                            <button className="p-[4px] rounded-full flex justify-center items-center " ><Twitter className="text-[1.5rem] " /></button>
+                            <Link to={'https://www.facebook.com/profile.php?id=100072770904288'} className="p-[4px] rounded-full flex justify-center items-center " ><Facebook className="text-[1.5rem] " /></Link>
+                            <Link to={'https://www.instagram.com/naumanch969/'} className="p-[4px] rounded-full flex justify-center items-center " ><Twitter className="text-[1.5rem] " /></Link>
+                            <Link to={'https://www.linkedin.com/in/nauman-ch-a68668256/'} className="p-[4px] rounded-full flex justify-center items-center " ><Instagram className="text-[1.5rem] " /></Link>
+                            <Link to={'https://github.com/naumanch969'} className="p-[4px] rounded-full flex justify-center items-center " ><GitHub className="text-[1.5rem] " /></Link>
+                            <Link to={'https://twitter.com/Naumanch969'} className="p-[4px] rounded-full flex justify-center items-center " ><Twitter className="text-[1.5rem] " /></Link>
                         </div>
                     </div>
                 </div>

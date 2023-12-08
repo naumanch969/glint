@@ -7,10 +7,15 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-family: 'Poppins', sans-serif;
+  /* cursor: none; */
+  scroll-behavior: smooth;
 }
+
 ::selection {
-  background-color: #00B753; /* Choose your desired background color */
-  color: #fff; /* Choose the text color for selected text */
+  background-color: #00B753;
+  /* Choose your desired background color */
+  color: #fff;
+  /* Choose the text color for selected text */
 }
 
 
@@ -44,4 +49,19 @@ body {
 .cloud-button:hover {
   background: var(--bg);
   color: var(--color);
+}
+
+
+
+.gradient-text {
+  background-image: linear-gradient(to bottom, #00B753, #fff);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+/* removing pagination dots of swiper */
+.swiper-pagination .swiper-pagination-clickable .swiper-pagination-bullets .swiper-pagination-horizontal {
+  diplay: none;
 }

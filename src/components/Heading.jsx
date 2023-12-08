@@ -10,7 +10,7 @@ const Heading = ({ subHeading, heading, subHeadingColor, headingColor }) => {
     return (
         <motion.div
             whileInView={{ y: [0, 1], opacity: [0, 1] }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.3 }}
             className="flex flex-col justify-center items-center  "
         >
             <h5 className={`uppercase text-${subHeadingColor} font-semibold tracking-[2px] md:text-[24px] sm:text-[22px] text-[20px]  `} >{subHeading}</h5>

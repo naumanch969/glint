@@ -5,12 +5,12 @@ const ServiceCard = ({ service }) => {
     return (
         <motion.div
             whileInView={{ y: [0, 1], opacity: [0, 1] }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.3 }}
             className="
                 inline-flex
-                flex-col items-center justify-center gap-[1rem]  p-[10px] 
+                flex-col items-center justify-center gap-[1rem] p-[10px] 
                 sm:flex-row sm:items-start sm:justify-start sm:gap-[1.5rem] sm:p-[2rem] 
-                md:w-full md:min-w-[380px] md:flex-row md:gap-[2rem] md:p-[2rem] 
+                md:w-full md:min-w-[380px] md:flex-row md:gap-[1rem] md:p-[1rem] 
                 lg:w-[50%] 
              "
         >

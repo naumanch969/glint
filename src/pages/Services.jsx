@@ -57,32 +57,32 @@ export default Services
 const servicesArr = [
     {
         icon: FormatPaint,
-        title: 'Brand Identity',
-        text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.'
+        title: 'MERN Stack',
+        text: 'Experience the synergy of MERN Stack Development with our expertise. From MongoDB\'s flexibility to Express.js\' streamlined backend, React\'s interactive frontend, and Node.js\' scalable runtime – we weave a seamless, full-stack narrative. Elevate your project with a technology stack that harmonizes innovation and efficiency.'
+    },
+    {
+        icon: FormatPaint,
+        title: 'Web Design',
+        text: 'Discover the artistry of web design where seamless user experiences meet captivating aesthetics. Our designs are not just pixels on a screen; they\'re pathways to engagement and visual storytelling. Step into a digital realm where every click unveils a journey of innovation and creativity.'
     },
     {
         icon: Inbox,
-        title: 'Illustration',
-        text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.'
+        title: 'Frontend Development',
+        text: 'Embark on a journey of Frontend Development excellence with us. We sculpt dynamic and responsive user interfaces, marrying form with function. From pixel-perfect designs to seamless interactions, we code experiences that captivate and interfaces that resonate. Join us at the forefront of web innovation.'
     },
     {
         icon: Campaign,
-        title: 'Marketing',
-        text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.'
+        title: 'Backend Development',
+        text: 'Dive into the robust world of Backend Development with us. Behind every seamless user experience lies a powerful and scalable backend architecture. We engineer data-driven solutions, ensuring your platform operates with efficiency and security. Let us shape the backbone of your digital ambitions, where innovation meets reliability.'
     },
-    {
-        icon: Public,
-        title: 'Web Design',
-        text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.'
-    },
-    {
-        icon: ViewInAr,
-        title: 'Packaging Design',
-        text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.'
-    },
-    {
-        icon: DeveloperBoard,
-        title: 'Web Development',
-        text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.'
-    },
+    // {
+    //     icon: ViewInAr,
+    //     title: 'Packaging Design',
+    //     text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.'
+    // },
+    // {
+    //     icon: DeveloperBoard,
+    //     title: 'Web Development',
+    //     text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.'
+    // },
 ]
