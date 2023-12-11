@@ -37,7 +37,7 @@ const Footer = () => {
     return (
         <footer ref={sectionRef} className="
             flex flex-col items-center md:gap-[6rem] sm:gap-[4rem] gap-[3rem] bg-black z-[10] sticky top-0
-            px-[14px] py-[7rem]
+            px-[14px] pt-[7rem] pb-[3rem]
             sm:px-[3rem] sm:py-[7rem]
             md:px-[7rem] md:py-[3rem]
             lg:px-[12rem] lg:py-[3rem]
@@ -74,7 +74,7 @@ const Footer = () => {
                                 onChange={handleChange}
                                 className='bg-inherit border-b-[1px] border-textGray px-[1rem] h-full outline-none border-none pl-0 rounded-md  '
                             />
-                            <button className="uppercase text-white bg-green rounded-md h-full md:px-[15px] sm:px-[15px] px-[4px] " >subscribe</button>
+                            <button className="uppercase text-white bg-green rounded-md h-full md:px-[15px] sm:px-[15px] px-[10px] " >subscribe</button>
                         </div>
 
                     </div>
@@ -85,7 +85,7 @@ const Footer = () => {
 
             {/* copyright */}
             <div className="flex justify-between items-center w-full lg:flex-row flex-col gap-4 ">
-                <div className="flex justify-start items-center">
+                <div className="flex flex-wrap sm:justify-start justify-center items-center">
                     {
                         links.map((item, index) => (
                             <div key={index} className="flex flex-col justify-center items-center w-auto " >

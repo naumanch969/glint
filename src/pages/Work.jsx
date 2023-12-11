@@ -162,11 +162,11 @@ const Work = () => {
         <section ref={sectionRef} name="work" className="bg-black flex flex-col justify-between gap-[0rem] z-10 w-full items-center px-[14px] py-[7rem] sticky top-0 sm:px-[3rem] sm:py-[7rem] md:px-14 md:py-[10rem] lg:px-16 ">
 
             {/* Bubbles */}
-            <div ref={circleRefs[0]} style={{ clipPath: `circle(50% at 100% 0%)` }} className="absolute top-0 left-0 bg-green h-full w-screen shadow-2xl transition-all duration-100" />
-            <div ref={circleRefs[1]} style={{ clipPath: `circle(8% at 10% 15%)` }} className="absolute top-0 left-0 bg-green h-full w-screen shadow-2xl transition-all duration-100" />
-            <div ref={circleRefs[2]} style={{ clipPath: `circle(20% at 10% 50%)` }} className="absolute top-0 left-0 bg-white h-full w-screen shadow-2xl transition-all duration-100" />
-            <div ref={circleRefs[3]} style={{ clipPath: `circle(2% at 5% 85%)` }} className="absolute top-0 left-0 bg-green h-full w-screen shadow-2xl transition-all duration-100" />
-            <div ref={circleRefs[4]} style={{ clipPath: `circle(5% at 90% 60%)` }} className="absolute top-0 left-0 bg-white h-full w-screen shadow-2xl transition-all duration-100" />
+            <div ref={circleRefs[0]} style={{ clipPath: `circle(50% at 100% 0%)` }} className="absolute top-0 left-0 bg-green h-full sm:w-screen w-full overflow-hidden shadow-2xl transition-all duration-100" />
+            <div ref={circleRefs[1]} style={{ clipPath: `circle(8% at 10% 15%)` }} className="absolute top-0 left-0 bg-green h-full sm:w-screen w-full overflow-hidden shadow-2xl transition-all duration-100" />
+            <div ref={circleRefs[2]} style={{ clipPath: `circle(20% at 10% 50%)` }} className="absolute top-0 left-0 bg-white h-full sm:w-screen w-full overflow-hidden shadow-2xl transition-all duration-100" />
+            <div ref={circleRefs[3]} style={{ clipPath: `circle(2% at 5% 85%)` }} className="absolute top-0 left-0 bg-green h-full sm:w-screen w-full overflow-hidden shadow-2xl transition-all duration-100" />
+            <div ref={circleRefs[4]} style={{ clipPath: `circle(5% at 90% 60%)` }} className="absolute top-0 left-0 bg-white h-full sm:w-screen w-full overflow-hidden shadow-2xl transition-all duration-100" />
 
 
             <Heading subHeading='recent work' heading='We love what we do, check out some of our latest works' subHeadingColor='black' headingColor='white' />

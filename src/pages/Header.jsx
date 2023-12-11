@@ -105,7 +105,7 @@ const Header = () => {
             <section name="home" className={`min-h-screen bg-black flex flex-col justify-between gap-[10rem] w-full pb-[12rem] bg-fixed bg-no-repeat bg-cover px-[14px] pt-[20px] sm:px-[3rem] sm:pt-[20px] md:px-[64px] md:pt-[1.5rem] relative z-[1]`}>
 
                 {/* Background Text (Design, Code, Develop) */}
-                <div className="shadow-text h-screen w-screen fixed top-0 right-0 grid md:grid-cols-12 grid-cols-4 gap-1 z-[1]">
+                <div className="shadow-text sm:h-screen sm:w-screen w-full h-full fixed top-0 right-0 grid md:grid-cols-12 grid-cols-4 gap-1 z-[1]">
                     <div className="bg-gray h-full flex-col items-center sm:col-span-1 relative md:flex hidden " >
                         <div className="absolute bottom-32 "><Ring size='md' /></div>
                     </div>
@@ -115,7 +115,7 @@ const Header = () => {
                     <div className="bg-gray h-full flex-col items-center sm:col-span-1 md:flex hidden " />
                 </div>
                 {/* Bubbles */}
-                <div className="bubbles h-screen w-screen fixed top-0 right-0 flex justify-around z-[2]">
+                <div className="bubbles sm:h-screen sm:w-screen w-full h-full fixed top-0 right-0 flex justify-around z-[2]">
                     <div className="container relative h-screen overflow-hidden w-full z-[1]">
                         <div className="bubbles flex flex-wrap justify-between gap-4 z-[3]">
                             {bubbles.map((bubble, index) => {
@@ -159,7 +159,7 @@ const Header = () => {
                 </div>
 
                 {/* Heading */}
-                <div className="heading h-screen w-screen fixed top-0 right-0 grid grid-cols-12 gap-1 z-[1]">
+                <div className="heading sm:h-screen sm:w-screen w-full h-full fixed top-0 right-0 grid grid-cols-12 gap-1 z-[1]">
                     <div className="col-span-1"></div>
                     <div className="col-span-10 flex justify-between items-center w-full h-full ">
                         <div className="">
