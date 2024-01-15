@@ -33,6 +33,6 @@ Glint is a dynamic project, regularly updated to reflect new projects and experi
 
 ## Contact
 
-For any inquiries or collaborations, reach out to me at [your-email@example.com].
+For any inquiries or collaborations, reach out to me at [naumanch969@gmail.com].
 
 Happy exploring with Glint!
