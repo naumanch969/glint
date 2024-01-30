@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  /* cursor: none; */
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #00B753;
+  /* Choose your desired background color */
+  color: #fff;
+  /* Choose the text color for selected text */
+}
+
+
+
+
+.active {
+  color: #00ba5c;
+}
+
+.animate-bubble {
+  color: var(--color);
+  animation: animate-bubble 15s linear infinite;
+  animation-duration: calc(200s / var(--i));
+}
+
+.animate-bubble:hover {
+  animation-play-state: paused;
+  transform: scale(1.2);
+}
+
+@keyframes animate-bubble {
+  0% {
+    transform: translateY(50rem) scale(0.5);
+  }
+
+  100% {
+    transform: translateY(-10rem) scale(1);
+  }
+}
+
+.cloud-button:hover {
+  background: var(--bg);
+  color: var(--color);
+}
+
+
+
+.gradient-text {
+  background-image: linear-gradient(to bottom, #00B753, #fff);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+/* removing pagination dots of swiper */
+.swiper-pagination .swiper-pagination-clickable .swiper-pagination-bullets .swiper-pagination-horizontal {
+  diplay: none;
+}
