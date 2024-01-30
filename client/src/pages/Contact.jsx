@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Close,
-  GitHub,
-} from "@mui/icons-material";
+import { Twitter, Close, GitHub, LinkedIn } from "@mui/icons-material";
 import { contact } from "../assets";
 import { motion } from "framer-motion";
 import validator from "email-validator";
@@ -346,50 +340,39 @@ const Contact = ({ setOpenOTPModal, setOtpFormType }) => {
                 </h5>
                 <p className="flex flex-col gap-[8px] ">
                   <span className="">naumanch969@gmail.com</span>
-                 </p>
+                </p>
               </div>
               {/* phone */}
               <div className="flex flex-col gap-[1rem] ">
-                <h5 className="text-green text-[24px] capitalize  ">
-                  call at
-                </h5>
+                <h5 className="text-green text-[24px] capitalize  ">call at</h5>
                 <p className="flex flex-col gap-[8px] ">
                   <span className="">Phone: (+92) 305 5712534</span>
                 </p>
               </div>
             </div>
             {/* social icons */}
-            <div className="flex items-center flex-wrap md:justify-start md:gap-[1rem] sm:justify-start sm:gap-[1rem] justify-between gap-[0] ">
-              <Link
-                to={"https://www.facebook.com/profile.php?id=100072770904288"}
-                className="p-[4px] rounded-full flex justify-center items-center "
-              >
-                <Facebook className="text-[1.5rem] " />
-              </Link>
-              <Link
-                to={"https://www.instagram.com/naumanch969/"}
-                className="p-[4px] rounded-full flex justify-center items-center "
-              >
-                <Twitter className="text-[1.5rem] " />
-              </Link>
-              <Link
-                to={"https://www.linkedin.com/in/nauman-ch-a68668256/"}
-                className="p-[4px] rounded-full flex justify-center items-center "
-              >
-                <Instagram className="text-[1.5rem] " />
-              </Link>
-              <Link
-                to={"https://github.com/naumanch969"}
-                className="p-[4px] rounded-full flex justify-center items-center "
-              >
-                <GitHub className="text-[1.5rem] " />
-              </Link>
-              <Link
-                to={"https://twitter.com/Naumanch969"}
-                className="p-[4px] rounded-full flex justify-center items-center "
-              >
-                <Twitter className="text-[1.5rem] " />
-              </Link>
+            <div className="flex flex-col gap-[1rem] ">
+              <h5 className="text-green text-[24px] capitalize  ">Connect Me</h5>
+              <div className="flex flex-col">
+                <div className="flex justify-start gap-x-2">
+                  <LinkedIn className="text-[1.5rem] " />
+                  <Link
+                    to={"https://www.linkedin.com/in/naumanch/"}
+                    className="hover:text-green "
+                  >
+                    linkedin.com/in/naumanch
+                  </Link>
+                </div>
+                <div className="flex justify-start gap-x-2 mt-4 ">
+                  <GitHub className="text-[1.5rem] " />
+                  <Link
+                    to={"https://github.com/naumanch969"}
+                    className="hover:text-green "
+                  >
+                    github.com/naumanch969
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>

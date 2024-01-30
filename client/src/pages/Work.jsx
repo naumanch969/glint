@@ -5,15 +5,16 @@ import { Chip, IconButton, Modal, Tooltip } from "@mui/material";
 import { Heading } from "../components";
 import {
   empty,
-  project1,
-  project10,
-  project2,
-  project3,
-  project4,
-  project5,
-  project6,
-  project7,
-  project9,
+  crm,
+  banklandingpage,
+  deziskin,
+  doctorguide,
+  musify,
+  ncexercises,
+  portfolio,
+  shoppy,
+  swiftcartDashboard,
+  swiftcartStore,
 } from "../assets";
 import {
   Close,
@@ -49,6 +50,10 @@ const Work = () => {
     { label: "ShadCN UI", value: "shadcnui" },
     { label: "Tailwind CSS", value: "tailwindcss" },
     { label: "HTML CSS JS", value: "htmlcssjs" },
+    { label: "Third Party API", value: "thirdpartyapi" },
+    { label: "MongoDB", value: "mongodb" },
+    { label: "Prisma", value: "prisma" },
+    { label: "Stripe", value: "stripe" },
   ];
   const sizes = [
     { label: "All", value: "all" },
@@ -152,18 +157,18 @@ const Work = () => {
             techFilters.includes("all") || techFilters.length === 0
               ? true
               : project.technologies.some((tech) => techFilters.includes(tech));
-  
+
           const sizeFilterCondition =
             sizeFilters.includes("all") || sizeFilters.length === 0
               ? true
               : sizeFilters.includes(project.size);
-  
+
           return techFilterCondition && sizeFilterCondition;
         });
       }
     });
   }, [techFilters, sizeFilters]);
-  
+
   //////////////////////////////////// FUNCTIONS ///////////////////////////////////////////////
   const imageClick = (image) => {
     setShowImageModal(true);
@@ -406,7 +411,7 @@ const Work = () => {
               setCurrentImage(initialProjects[swiper.activeIndex]);
             }}
           >
-            {initialProjects.map((image, index) => (
+            {initialProjects.map((project, index) => (
               <SwiperSlide key={index} className=" ">
                 <div className="md:h-full md:gap-0 sm:h-full sm:gap-0 h-full gap-[10px] w-full flex justify-between items-center ">
                   <button onClick={() => moveBack(currentSlideIndex - 1)}>
@@ -415,7 +420,7 @@ const Work = () => {
                   </button>
                   <div className=" flex justify-center items-center md:h-fit sm:h-fit h-full ">
                     <img
-                      src={image.image}
+                      src={project.image}
                       className={`${
                         fullScreen
                           ? " md:h-[25rem] sm:h-[20rem] h-full "
@@ -508,97 +513,128 @@ const initialProjects = [
   {
     index: 0,
     createdAt: "2023",
-    image: project1,
+    image: crm,
     src: "https://growmarketing.netlify.app",
     heading: "CRM",
     subHeading: "Customer Relation Management System for Real Estate Agency",
     detail:
       "As a CRM Architect & Technical Manager, I specialize in crafting robust Customer Relationship Management (CRM) solutions using the MERN stack. Currently overseeing the entire development process, I am actively involved in resolving any technical challenges that arise, ensuring the seamless functionality and optimal performance of the CRM system. My role encompasses end-to-end responsibility, from initial architecture design to ongoing technical issue resolution, contributing to the success of the CRM project.",
     size: "large",
-    technologies: ["mern", "react.js", "htmlcssjs"],
+    technologies: [
+      "mern",
+      "react.js",
+      "tailwindcss",
+      "express.js",
+      "node.js",
+      "mongodb",
+    ],
   },
   {
     index: 1,
     createdAt: "2024",
-    image: project9,
+    image: swiftcartStore,
     src: "https://swiftcart-store.vercel.app/",
     heading: "SwiftCart Store",
     subHeading: "An ecommerce site",
     detail:
-      " an ecommerce website built to provide a seamless shopping experience. It is designed with simplicity and functionality in mind, ensuring a smooth and enjoyable shopping journey for users. The key features includes cart funtionality, displaying multiple billboards and respective categories, related products, featured products, authentication, filters, payment method integration",
+      "An ecommerce website built to provide a seamless shopping experience. It is designed with simplicity and functionality in mind, ensuring a smooth and enjoyable shopping journey for users. The key features includes cart funtionality, displaying multiple billboards and respective categories, related products, featured products, authentication, filters, payment method integration",
     size: "large",
-    technologies: ["next.js", "shadcnui"],
+    technologies: ["next.js", "shadcnui", "tailwindcss", "prisma", "stripe"],
   },
   {
     index: 2,
     createdAt: "2024",
-    image: project10,
+    image: swiftcartDashboard,
     src: "https://swiftcart-dashboard.vercel.app/",
     heading: "SwiftCart Dashboard",
     subHeading: "Dashboard application of SwiftCart (an ecommerce website)",
     detail:
       "This Next.JS based dashboard is designed to simplify the management of multiple e-commerce platforms in one place. With features like billboards, categories, sizes, colors, products, orders, Stripe integration, and authentication powered by Clerk, Swiftcart Dashboard streamlines the online store management experience.",
     size: "large",
-    technologies: ["mern", "next.js", "shadcnui"],
+    technologies: ["next.js", "shadcnui", "tailwindcss", "prisma", "stripe"],
   },
   {
     index: 3,
     createdAt: "2023",
-    image: project3,
-    src: "https://deziskin.netlify.app",
-    heading: "Deziskin",
-    subHeading: "An ecommerce website of beauty products",
-    detail:
-      "Deziskin stands as a showcase in the e-commerce realm, a MERN stack-powered website dedicated to a singular, premium product. I spearheaded the end-to-end development, seamlessly integrating MongoDB, Express.js, React, and Node.js to deliver an immersive shopping experience. From intuitive user interfaces to robust backend functionalities, Deziskin embodies my expertise in crafting dynamic, full-stack solutions for streamlined online retail",
-    size: "medium",
-    technologies: ["mern", "next.js", "shadcnui"],
-  },
-  {
-    index: 4,
-    createdAt: "2023",
-    image: project2,
+    image: doctorguide,
     src: "https://doctorguide.ai",
     heading: "guitaristic",
     subHeading: "branding",
     detail:
       "As the lead Frontend Developer for a collaborative AI project, I spearheaded the creation of an intuitive user interface using React.js. With a focus on translating intricate AI functionalities into user-friendly designs, I am currently dedicated to refining and addressing frontend aspects. My role is centered on delivering a polished and visually compelling interface that seamlessly complements the advanced capabilities of our AI tool.",
     size: "large",
-    technologies: ["mern", "next.js", "shadcnui"],
+    technologies: ["react.js"],
   },
   {
-    index: 5,
+    index: 4,
     createdAt: "2023",
-    image: project7,
-    src: "https://naumanch.netlify.app/",
-    heading: "Portfolio Website",
-    subHeading: "Portfolio Website",
-    detail:
-      "The Portfolio Website of a Full Stack Developer, built in React and Framer Motion, showcases the developer's skills and projects. With an intuitive interface and smooth animations, the website demonstrates the developer's expertise in front-end and back-end technologies. Visitors can explore detailed project descriptions and examples of their work, making it an impressive representation of their abilities to potential employers and clients",
-    size: "small",
-    technologies: ["mern", "next.js", "shadcnui"],
-  },
-  {
-    index: 6,
-    createdAt: "2023",
-    image: project5,
+    image: musify,
     src: "https://musif.netlify.app",
     heading: "Musif",
     subHeading: "Musif",
     detail:
       "The Music Website utilizes third-party APIs to create an engaging platform for music enthusiasts. It offers trending music, top charts, and personalized recommendations, powered by popular music streaming APIs.",
-    size: "large",
-    technologies: ["mern", "next.js", "shadcnui"],
+    size: "medium",
+    technologies: ["react.js", "thirdpartyapi"],
   },
   {
-    index: 3,
+    index: 5,
     createdAt: "2023",
-    image: project4,
-    src: "https://shopy-dashboard.netlify.app/ecommerce",
+    image: deziskin,
+    src: "https://deziskin.netlify.app",
+    heading: "Deziskin",
+    subHeading: "An ecommerce website of beauty products",
+    detail:
+      "Deziskin stands as a showcase in the e-commerce realm, a MERN stack-powered website dedicated to a singular, premium product. I spearheaded the end-to-end development, seamlessly integrating MongoDB, Express.js, React, and Node.js to deliver an immersive shopping experience. From intuitive user interfaces to robust backend functionalities, Deziskin embodies my expertise in crafting dynamic, full-stack solutions for smooth online retail",
+    size: "medium",
+    technologies: ["react.js", "stripe"],
+  },
+  {
+    index: 6,
+    createdAt: "2023",
+    image: portfolio,
+    src: "https://naumanch.netlify.app/",
+    heading: "Portfolio Website",
+    subHeading: "Portfolio Website",
+    detail:
+      "The Portfolio Website of a Full Stack Developer, built in React and Framer Motion, showcases the skills, testimonials and projects. With an intuitive interface and smooth animations, the website demonstrates the expertise in front-end and back-end technologies. Visitors can explore detailed project descriptions and examples of the work, making it an impressive representation of affective abilities to potential employers and clients",
+    size: "medium",
+    technologies: ["mern", "react.js", "express.js", "node.js", "mongodb"],
+  },
+  {
+    index: 7,
+    createdAt: "2022",
+    image: shoppy,
+    src: "https://shopy-dashboard.netlify.app",
     heading: "Shoppy Dashboard",
     subHeading: "Dashboard application",
     detail:
-      "The Dashboard Application is a web platform for viewing business data. It shows key metrics like user stats, product info, revenue, and expenses in one place. It's user-friendly, offers real-time insights, and helps with decision-making. It's useful for startups and big companies, improving productivity through data visualization and analysis.",
+      "The Dashboard Application is a web platform for viewing business data. It shows key metrics like user stats, product info, revenue, and expenses in one place. It's user-friendly, offers real-time insights, and helps with decision-making.",
     size: "small",
-    technologies: ["mern", "next.js", "shadcnui"],
+    technologies: ["mern", "react.js", "express.js", "node.js", "mongodb"],
+  },
+  {
+    index: 8,
+    createdAt: "2022",
+    image: banklandingpage,
+    src: "https://ncbank-landing-page.netlify.app/",
+    heading: "Shoppy Dashboard",
+    subHeading: "Dashboard application",
+    detail:
+      "The Bank Landing Page is a user-friendly web interface offering easy access to essential banking services. It showcases account options, loans, credit cards, and investments.",
+    size: "small",
+    technologies: ["react.js", "express.js", "node.js", "mern", "mongodb"],
+  },
+  {
+    index: 9,
+    createdAt: "2022",
+    image: ncexercises,
+    src: "https://ncexercises.netlify.app/",
+    heading: "Exercises Web",
+    subHeading: "Dashboard application",
+    detail:
+      "Designed and developed with ReactJS, the Search-Based Exercise Website is a fitness app which integrates third-party services for exercise data, offering users a straightforward and effective place to search for exercises and access comprehensive information. Moreover it also provides the related equipments, exercises and youtube video recommendations of each respective drill.",
+    size: "small",
+    technologies: ["react.js", "express.js", "node.js", "mern", "mongodb"],
   },
 ];
