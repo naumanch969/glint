@@ -74,15 +74,5 @@ const servicesArr = [
         icon: Campaign,
         title: 'Backend Development',
         text: 'Dive into the robust world of Backend Development with us. Behind every seamless user experience lies a powerful and scalable backend architecture. We engineer data-driven solutions, ensuring your platform operates with efficiency and security. Let us shape the backbone of your digital ambitions, where innovation meets reliability.'
-    },
-    // {
-    //     icon: ViewInAr,
-    //     title: 'Packaging Design',
-    //     text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.'
-    // },
-    // {
-    //     icon: DeveloperBoard,
-    //     title: 'Web Development',
-    //     text: 'Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.'
-    // },
+    }, 
 ]

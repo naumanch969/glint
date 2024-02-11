@@ -116,30 +116,7 @@ const Work = () => {
         };
       }
     });
-  }, []);
-  // useEffect(() => {
-  //     if (sectionRef.current) {
-  //         VanillaTilt.init(sectionRef.current, {
-  //             max: 25,
-  //             speed: 400,
-  //             glare: true,
-  //             'max-glare': 0.5,
-  //         });
-
-  //         return () => {
-  //             sectionRef.current?.vanillaTilt?.destroy(); // Cleanup on component unmount
-  //         }
-  //     }
-  // }, []);
-  useEffect(() => {
-    console.log("projects", projects);
-  }, [projects]);
-  useEffect(() => {
-    console.log("techFilters", techFilters);
-  }, [techFilters]);
-  useEffect(() => {
-    console.log("sizeFilters", sizeFilters);
-  }, [sizeFilters]);
+  }, []); 
   useEffect(() => {
     setProjects((prevProjects) => {
       if (

@@ -81,43 +81,8 @@ const Clients = () => {
           heading="What they are saying about Glint"
           subHeadingColor="green"
           headingColor="black"
-        />
-
-        {/* <motion.div
-                    whileInView={{ y: [0, 1], opacity: [0, 1] }}
-                    transition={{ duration: 0.3 }}
-                    className="flex justify-between items-center w-full "
-                >
-
-                    <Swiper
-                        ref={testimonialRef}
-                        spaceBetween={10}
-                        breakpoints={{
-                            640: { slidesPerView: 2, spaceBetween: 20, },
-                            768: { slidesPerView: 4, spaceBetween: 40, },
-                            1024: { slidesPerView: 6, spaceBetween: 50, },
-                        }}
-                        autoplay={{ delay: 2500, disableOnInteraction: true }}
-                        pagination={{ clickable: true, }}
-                        modules={[Pagination, Autoplay, Navigation]}
-                        className="  w-full text-lightGray pb-[3rem] "
-                    >
-                        {
-                            clientsIcon.map((item, index) => (
-                                <SwiperSlide
-                                    key={index}
-                                    className="flex justify-center items-center text-[20px] w-fit pb-[2rem] "
-                                >
-                                    <item.icon style={{ fontSize: '120px' }} className="text-textGray hover:text-black text-[120px] " />
-                                </SwiperSlide>
-                            ))
-                        }
-                    </Swiper>
-
-                </motion.div> */}
-
-        {/* <hr className="h-[2px]  bg-textGray md:w-[40rem] sm:w-[80%] w-[80%]  " /> */}
-      </div>
+        /> 
+       </div>
 
       {/* testimonials */}
       <motion.div

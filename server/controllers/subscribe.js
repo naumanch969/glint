@@ -1,7 +1,7 @@
 import otpGenerator from "otp-generator";
 import User from "../models/user.js";
 import OTP from "../models/otp.js";
-import { createError, sendMail } from "../utils/functions.js"; // Import your email sending utility
+import { createError, sendMail } from "../utils/functions.js"; 
 
 export const subscribe = async (req, res, next) => {
   try {
