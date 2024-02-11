@@ -53,7 +53,6 @@ export const verify = async (req, res, next) => {
     if (!findedUser) return next(createError(res, 400, "User not found"));
 
     const otps = await OTP.find({ email });
-    console.log(otps);
     if (otps?.length == 0)
       return next(createError(res, 400, "You have entered an expired OTP"));
 
