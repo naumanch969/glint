@@ -2,7 +2,7 @@ import otpGenerator from "otp-generator";
 import User from "../models/user.js";
 import OTP from "../models/otp.js";
 import Contact from "../models/contact.js";
-import { createError, sendMail } from "../utils/functions.js"; // Import your email sending utility
+import { createError, sendMail } from "../utils/functions.js";  
 
 export const contactFormSubmit = async (req, res, next) => {
   try {
