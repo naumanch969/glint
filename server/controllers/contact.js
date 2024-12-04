@@ -73,6 +73,6 @@ export const verify = async (req, res, next) => {
     res.status(200).json({ message: "Your form submission got completed" });
   } catch (err) {
     next(createError(res, 500, err.message));
-    console.log(err);
+    console.error(err);
   }
 };

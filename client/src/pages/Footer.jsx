@@ -47,7 +47,7 @@ const Footer = ({ setOpenOTPModal, setOtpFormType }) => {
         setOpenOTPModal(true);
       }
     } catch (error) {
-      console.log("Error in Submitting Response ", error);
+      console.error("Error in Submitting Response ", error);
     }
   };
 

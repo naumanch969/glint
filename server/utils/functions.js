@@ -16,11 +16,11 @@ export const sendMail = (to, subject, html) => {
       html,
     };
     transporter.sendMail(mailOptions, function (err, info) {
-      if (err) console.log("err in sending mail", err);
+      if (err) console.error("err in sending mail", err);
       else console.log("Mail transfered successfully.");
     });
   } catch (error) {
-    console.log("error", error);
+    console.error("error", error);
   }
 };
 

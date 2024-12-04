@@ -35,4 +35,4 @@ mongoose
   .then(() =>
     app.listen(5005, () => console.log("App is listening at port ", 5005))
   )
-  .catch((e) => console.log("Error in Mongodb Connection ", e));
+  .catch((e) => console.error("Error in Mongodb Connection ", e));
